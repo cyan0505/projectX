@@ -57,6 +57,12 @@ table {
 	border-spacing: 0;
 }
 
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
 /*
   ========================================
   Grid
@@ -324,8 +330,3 @@ img {
   background-size: cover;
 }
 
-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
