@@ -13,7 +13,7 @@
             <h1 class="logo">
                 <a href="index.html">WoW <br> role Guide</a>
             </h1>
-            <h3 class="tagline">August 24&ndash;26th &mdash; Chicago, IL</h3>
+            <h3 class="tagline">Easy peasy lemon squeezy</h3>
             <nav class="primary-nav">
                 <a href="index.html" class="btn btn-alt">Home</a>
                 <a href="tank.html" class="btn btn-alt">Tank</a>
@@ -28,22 +28,22 @@
       <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
     </section>
 
-    <section class="massage">
-        <form method="GET" action="mailto:cyan1988@gmail.com" enctype="text/plain">
+    <section class="massage bg">
+        <form name="myForm" onsubmit="return validateForm()" method="GET" action="mailto:cyan1988@gmail.com" enctype="text/plain">
             <div>Subject</div>
-            <input type="text" name="subject" />
+            <input type="text" name="subject" id="subject" onkeyup="enebleButton()"/>
         
             <div>Name</div>
-            <input name="Name" />
+            <input name="name" id="name_surname" onkeyup="enebleButton()"/>
         
             <div>E-Mail</div>
-            <input name="E-Mail Address" />
+            <input name="email" id="email" onkeyup="enebleButton()"/>
         
             <div>Message</div>
-            <textarea name="Message"></textarea>
+            <textarea name="message" onkeyup="enebleButton()"></textarea>
         
             <br/>
-            <input type="submit" value="Send" />
+            <button type="button" value="Send" id="send_button" onclick="validateName();validateEmail();" disabled="disabled">Send</button>
         
             <input type="hidden" name="body" />
         </form>
@@ -61,33 +61,51 @@
     </footer>
 
     <script>
-        var form = document.getElementsByTagName('form')[0];
-        form.addEventListener('submit',contact,false);
-        function contact(e) {
-           // Prevent Default Form Submission
-           e.preventDefault();
-     
-           var target = e.target || e.srcElement;
-           var i = 0;
-           var message = '';
-     
-           // Loop Through All Input Fields
-           for(i = 0; i < target.length; ++i) {
-              // Check to make sure it's a value. Don't need to include Buttons
-              if(target[i].type != 'text' && target[i].type != 'textarea') {
-                     // Skip to next input since this one doesn't match our rules
-                 continue;
-              }
-     
-              // Add Input Name and value followed by a line break
-              message += target[i].name + ': ' + target[i].value + "\r\n";
-           }
-           // Modify the hidden body input field that is required for the mailto: scheme
-           target.elements["body"].value = message;
-     
-           // Submit the form since we previously stopped it. May cause recursive loop in some browsers? Should research this.
-           this.submit();
+        function validateName(){
+            var pattern = /[^a-z|^A-Z|^\s]/;
+            var pattern2 = /^\s+$/;
+            if(document.getElementById("name_surname").value.match(pattern)){
+                alert("Only alphabets from a-z and A-Z are allowed in NAME");
+                return false;
+            }
+            if(pattern2.test(document.getElementById("name_surname").value)){
+                alert("only space in name");
+                return false;
+            }
+            if(document.getElementById("name_surname").value.length > 5){
+                alert("more than 5");
+                return false;
+            } 
         }
-     </script>
+
+        function validateEmailFormat(email) {
+            var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+        }
+
+        function validateEmail(){
+            var pattern2 = /^\s+$/;
+            if(!validateEmailFormat(document.getElementById("email").value)){
+                alert("wrong email format");
+                return false;
+            }
+            // if(pattern2.test(document.getElementById("email").value)){
+            //     alert("only space in email");
+            // }
+        }
+
+        function enebleButton() {
+            var name = document.forms["myForm"]["name"].value;
+            var sub = document.forms["myForm"]["subject"].value;
+            var email = document.forms["myForm"]["email"].value;
+            var message = document.forms["myForm"]["message"].value;
+            var button = document.getElementById("send_button");
+            if (name !== "" && sub !== "" && email !== "" && message !== "") {
+                button.disabled = false;
+            }
+            if (name == "" || sub == "" || email == "" || message == "") {
+                button.disabled = true;
+            }}
+        </script>
   </body>
 </html>
