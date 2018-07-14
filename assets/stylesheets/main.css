@@ -31,12 +31,10 @@ footer, header, hgroup, menu, nav, section {
 body, html {
 	height: 100%;
 	width: 100%;
-	margin: 0;
 }
 
 body {
 	line-height: 1;
-	color: #888;
  	font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -106,8 +104,6 @@ table {
 .primary-footer {
   color: #648880;
   font-size: 14px;
-  padding-bottom: 14px;
-  padding-top: 14px;
   text-align: center;
 }
 
@@ -132,7 +128,7 @@ width: 66.66%;
   padding-right: 10px;
 }
 
-.massage{
+.message{
 margin: 0 auto;
 float: center;
 text-align:center
@@ -264,39 +260,6 @@ h1, h2, h3, h4 {
 	text-align: right;
 	text-transform: uppercase;
   }
-  
-
-/* .nav{
-	width: 70%;
-    border:1px solid #ccc;
-    border-width:1px 0;
-    list-style:none;
-    margin:0;
-    padding:5px;
-	text-align:center;
-	float: right;
-	font-size: 14px;
-    font-weight: 400;
-}
-.nav li{
-    display:inline;
-}
-.nav a{
-    display:inline-block;
-    padding:15px;
-} */
-
-/* .button:active {
-	background-color: rgb(13, 99, 16);
-	box-shadow: 0 2px #666;
-	transform: translateY(4px);
-  }
-   */
-/*
-  ========================================
-  Home
-  ========================================
-*/
 
 .hero {
 	color: #fff;
@@ -344,11 +307,17 @@ h1, h2, h3, h4 {
   }
   
   .bg {
-    z-index:-1;
-    background-image: url("12.jpg");
+  z-index:-1;
+  background-image: url("12.jpg");
 	height: 100%; 
 
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
   }
+
+ footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
