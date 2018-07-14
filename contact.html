@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Contact - WoW Role Guide</title>
+        <link rel="stylesheet" href="assets/stylesheets/main.css">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:100,300,400">
+    </head>
+
+    <body>
+        <header class="container group row">
+            <h1 class="logo">
+                <a href="index.html">WoW <br> role Guide</a>
+            </h1>
+            <h3 class="tagline">August 24&ndash;26th &mdash; Chicago, IL</h3>
+            <nav class="primary-nav">
+                <a href="index.html" class="btn btn-alt">Home</a>
+                <a href="tank.html" class="btn btn-alt">Tank</a>
+                <a href="dps.html" class="btn btn-alt">Damage Dealer</a>
+                <a href="healer.html" class="btn btn-alt">Healer</a>
+                <a href="contact.html" class="btn btn-alt">Contact</a>
+            </nav>
+    </header>
+
+    <section class="hero container row2">
+      <h1>Contact us via email</h1>
+      <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+    </section>
+
+    <section class="massage">
+        <form method="GET" action="mailto:cyan1988@gmail.com" enctype="text/plain">
+            <div>Subject</div>
+            <input type="text" name="subject" />
+        
+            <div>Name</div>
+            <input name="Name" />
+        
+            <div>E-Mail</div>
+            <input name="E-Mail Address" />
+        
+            <div>Message</div>
+            <textarea name="Message"></textarea>
+        
+            <br/>
+            <input type="submit" value="Send" />
+        
+            <input type="hidden" name="body" />
+        </form>
+    </section>
+
+    <footer class="primary-footer container group row">
+        <small>&copy; Dawid Grygier Web designer of destruction</small>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="speakers.html">Tank</a>
+            <a href="schedule.html">Damage Dealer</a>
+            <a href="venue.html">Healer</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </footer>
+
+    <script>
+        var form = document.getElementsByTagName('form')[0];
+        form.addEventListener('submit',contact,false);
+        function contact(e) {
+           // Prevent Default Form Submission
+           e.preventDefault();
+     
+           var target = e.target || e.srcElement;
+           var i = 0;
+           var message = '';
+     
+           // Loop Through All Input Fields
+           for(i = 0; i < target.length; ++i) {
+              // Check to make sure it's a value. Don't need to include Buttons
+              if(target[i].type != 'text' && target[i].type != 'textarea') {
+                     // Skip to next input since this one doesn't match our rules
+                 continue;
+              }
+     
+              // Add Input Name and value followed by a line break
+              message += target[i].name + ': ' + target[i].value + "\r\n";
+           }
+           // Modify the hidden body input field that is required for the mailto: scheme
+           target.elements["body"].value = message;
+     
+           // Submit the form since we previously stopped it. May cause recursive loop in some browsers? Should research this.
+           this.submit();
+        }
+     </script>
+  </body>
+</html>
