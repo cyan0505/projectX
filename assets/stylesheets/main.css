@@ -88,7 +88,7 @@ footer {
 }
 
 .logo {
-	border-top: 4px solid #648880;
+	border-top: 4px solid #0cee50;
 	float: left;
 	font-size: 48px;
 	font-weight: 1000;
@@ -96,6 +96,10 @@ footer {
 	line-height: 44px;
 	padding: 40px 0 22px 0;
 	text-transform: uppercase;
+}
+
+.logo a{
+  color: #0cee50;
 }
 
 .title {
@@ -225,16 +229,16 @@ cite, em {
 
 .primary-header a:hover,
 .primary-footer a:hover {
-  color: #648880;
+  color: #f793d9;
 }
 
 .row {
-  background: #293f50;
+  background: #1c2e3b;
 }
 
 .row2 {
   background: #466368;
-  background: linear-gradient(to right, #f6f1d3, #648880 85%, #60b355);
+  background: linear-gradient(to right, #f6f1d3, #60b355 85%, #36772d);
   border-radius: 6px;
 }
 
@@ -289,7 +293,7 @@ cite, em {
 }
 
 .teaser a:hover h3 {
-  color: #a9b2b9;
+  color: #f793d9;
 }
 
 a {
