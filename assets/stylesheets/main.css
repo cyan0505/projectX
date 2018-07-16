@@ -247,7 +247,7 @@ cite, em {
   /* background: #1c2e3b; */
   background-image: url("15.jpg");
   background-repeat:no-repeat;
-  animation: breath 5s linear infinite;  border-radius: 6px;
+  animation: breath 5s linear infinite;
 }
 
 .row2 {
