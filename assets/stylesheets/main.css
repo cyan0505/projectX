@@ -244,20 +244,23 @@ cite, em {
 }
 
 .row {
-  background: #1c2e3b;
+  /* background: #1c2e3b; */
+  background-image: url("14.jpg");
+  background-repeat:no-repeat;
+  animation: breath 5s linear infinite;  border-radius: 6px;
 }
 
 .row2 {
-  /* background: #466368;
-  background: linear-gradient(to right, #f6f1d3, #60b355 85%, #0d3b05); */
+  background: #466368;
+  background: linear-gradient(to right, #c2ad34, #60b355 85%, #0d3b05);
   /* background: url(13.jpg) no-repeat center center fixed; */
-  background-image: url("14.jpg");
-  background-repeat:no-repeat;
+  /* background-image: url("14.jpg");
+  background-repeat:no-repeat; */
   /* background-position:center-top; */
   /* background-position-x: 50%;
   background-position-y: 0%; */
   /* background-attachment:fixed; */
-  animation: breath 10s linear infinite;  border-radius: 6px;
+  /* animation: breath 10s linear infinite;  border-radius: 6px; */
   /* display: fixed; */
 }
 
