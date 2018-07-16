@@ -248,10 +248,31 @@ cite, em {
 }
 
 .row2 {
-  background: #466368;
-  background: linear-gradient(to right, #f6f1d3, #60b355 85%, #0d3b05);
-  border-radius: 6px;
+  /* background: #466368;
+  background: linear-gradient(to right, #f6f1d3, #60b355 85%, #0d3b05); */
+  /* background: url(13.jpg) no-repeat center center fixed; */
+  background-image: url("14.jpg");
+  background-repeat:no-repeat;
+  /* background-position:center-top; */
+  /* background-position-x: 50%;
+  background-position-y: 0%; */
+  /* background-attachment:fixed; */
+  animation: breath 10s linear infinite;  border-radius: 6px;
+  /* display: fixed; */
 }
+
+@keyframes breath {
+  0%   { background-size: 200%; }
+  50% { background-size: 220%; }
+  100% { background-size: 200%; }
+}
+/* @keyframes zoom {
+  0% { transform:scale(1,1); }
+  50% { transform:scale(1.2,1.2); }
+  100% {
+      transform:scale(1,1); 
+  }
+  } */
 
 /*
   ========================================
@@ -337,10 +358,15 @@ img {
 
 .bg {
   z-index:-1;
-  background-image: url("12.jpg");
   height: 100%; 
-
-  background: url(12.jpg) no-repeat center center fixed; 
+  /* background: url(13.jpg) no-repeat center center fixed; */
+  background-image: url("12.jpg");
+  background-repeat:no-repeat;
+  background-attachment:fixed;
+  background-size:cover;
+  background-position:center-top;
+  background-position-x: 50%;
+  background-position-y: 0%;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
