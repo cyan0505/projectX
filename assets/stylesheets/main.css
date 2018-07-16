@@ -245,14 +245,18 @@ cite, em {
 
 .row {
   /* background: #1c2e3b; */
-  background-image: url("14.jpg");
+  background-image: url("15.jpg");
   background-repeat:no-repeat;
   animation: breath 5s linear infinite;  border-radius: 6px;
 }
 
 .row2 {
-  background: #466368;
-  background: linear-gradient(to right, #c2ad34, #60b355 85%, #0d3b05);
+  background: linear-gradient(270deg, #bbd52e, #80d52e, #518e16, #020301);
+  background-size: 800% 800%;
+
+  -webkit-animation: AnimationName 10s ease infinite;
+  -moz-animation: AnimationName 10s ease infinite;
+  animation: AnimationName 10s ease infinite;
   /* background: url(13.jpg) no-repeat center center fixed; */
   /* background-image: url("14.jpg");
   background-repeat:no-repeat; */
@@ -262,6 +266,24 @@ cite, em {
   /* background-attachment:fixed; */
   /* animation: breath 10s linear infinite;  border-radius: 6px; */
   /* display: fixed; */
+}
+
+
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName { 
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
 }
 
 @keyframes breath {
